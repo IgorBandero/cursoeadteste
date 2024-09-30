@@ -10,13 +10,23 @@ class EstadoAluno:
             self.__modulos_finalizados = []
             self.__certificados = []
             self.__progresso = 0
-        else: 
+        else:
             raise TypeError("Carga_obrigatoria deve ser um inteiro.")
-        
+    
+    @property
+    def carga_obrigatoria(self) -> (int):
+        return self.__carga_obrigatoria 
+
+    @carga_obrigatoria.setter
+    def carga_obrigatoria(self, carga_obrigatoria: int):
+        if not isinstance(carga_obrigatoria, int):
+            raise TypeError("Carga_obrigatoria deve ser um inteiro.")
+        self.__carga_obrigatoria = carga_obrigatoria
+    
     @property
     def modulos_atuais(self) -> (list[Modulo]):
         return self.__modulos_atuais 
-   
+
     @modulos_atuais.setter
     def modulos_atuais(self, modulos_atuais: list[Modulo]):
         if not isinstance(modulos_atuais, list):
@@ -37,7 +47,7 @@ class EstadoAluno:
     @property
     def modulos_finalizados(self) -> (list[Modulo]):
         return self.__modulos_finalizados 
-   
+
     @modulos_finalizados.setter
     def modulos_finalizados(self, modulos_finalizados: list[Modulo]):
         if not isinstance(modulos_finalizados, list):
@@ -48,7 +58,7 @@ class EstadoAluno:
     @property
     def certificados(self) -> (list[Certificado]):
         return self.__certificados 
-   
+
     @certificados.setter
     def certificados(self, certificados: list[Certificado]):
         if not isinstance(certificados, list):

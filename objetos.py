@@ -5,6 +5,7 @@ from administrador import Administrador
 from orientacao import Orientacao
 from curso import Curso
 from datetime import date
+from estadoAluno import EstadoAluno
 
 # Tentativa de instanciar um objeto de classe abstrata, deve dar erro
 # pessoa1 = Pessoa("Ana", "000.111.222-33", "48 998877111", "ana@contato.com", "ana123", "12345", "Rua de cima", 250, "Trindade", "Florianópolis", "88040-170")
@@ -39,7 +40,6 @@ print("Orientação 1: ", orientacao1._Orientacao__aluno.nome, " é orientando d
 orientacao2 = Orientacao(aluno2, professor2)  # Maria é orientanda de Bruno Silva
 print("Orientação 2: ", orientacao2._Orientacao__aluno.nome, " é orientanda de ", orientacao2._Orientacao__professor.nome)
 
-
 # Adicionando orientandos ao professor correto
 professor1.adicionar_orientando(orientacao1)
 professor2.adicionar_orientando(orientacao2)
@@ -48,3 +48,8 @@ professor2.adicionar_orientando(orientacao2)
 print(professor1.listar_orientandos())
 print(professor2.listar_orientandos())
 
+# Criando objetos de EstadoAluno
+estado_aluno1 = EstadoAluno(aluno1.matricula.curso.carga_horaria)
+print("Carga obrigatória do aluno 1: ", estado_aluno1._EstadoAluno__carga_obrigatoria)
+estado_aluno2 = EstadoAluno(aluno2.matricula.curso.carga_horaria)
+print("Carga obrigatória do aluno 2: ", estado_aluno2._EstadoAluno__carga_obrigatoria)

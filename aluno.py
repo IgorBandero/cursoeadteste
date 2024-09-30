@@ -8,7 +8,7 @@ import datetime
 class Aluno(Pessoa):
 
     def __init__(self, nome: str, cpf: str, telefone: str, email: str, usuario: str, senha: str, rua: str, 
-                 num_residencia: int, bairro: str, cidade: str, cep: str, curso: Curso, codigo: str, data_inicio: datetime):
+                num_residencia: int, bairro: str, cidade: str, cep: str, curso: Curso, codigo: str, data_inicio: datetime):
 
         super().__init__(nome, cpf, telefone, email, usuario, senha, rua, num_residencia, bairro, cidade, cep)
         self.__matricula = Matricula(curso, codigo, data_inicio)
