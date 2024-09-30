@@ -47,3 +47,4 @@ professor2.adicionar_orientando(orientacao2)
 # Listando orientandos de cada professor
 print(professor1.listar_orientandos())
 print(professor2.listar_orientandos())
+

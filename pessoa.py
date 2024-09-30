@@ -6,11 +6,11 @@ class Pessoa(ABC):
     def __init__(self, nome: str, cpf: str, telefone: str, email: str, usuario: str, senha: str, rua: str, num_residencia: int, bairro: str, cidade: str, cep: str):
         if isinstance(nome, str):
             self.__nome = nome
-        else: 
+        else:
             raise TypeError("Nome deve ser uma string.")
         if isinstance(cpf, str):
             self.__cpf = cpf
-        else: 
+        else:
             raise TypeError("Cpf deve ser uma string.")
         if isinstance(telefone, str):
             self.__telefone = telefone
@@ -42,13 +42,13 @@ class Pessoa(ABC):
         self.__nome = nome
     
     @property
-    def cpf(int) -> (int):
-        return self.__cpf  # type: ignore
+    def cpf(self) -> (str):
+        return self.__cpf
         
     @cpf.setter
-    def cpf(self, cpf: int):
-        if not isinstance(cpf, int):
-            raise TypeError("Cpf deve ser um inteiro.")
+    def cpf(self, cpf: str):
+        if not isinstance(cpf, str):
+            raise TypeError("Cpf deve ser uma string.")
         self.__cpf = cpf
 
     @property
